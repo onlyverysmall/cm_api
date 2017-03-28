@@ -13,6 +13,8 @@ class RouteResolver
     end
   end
 
+  private
+
   def invalid_request_method
     [405, {}, ["invalid request method"]]
   end
