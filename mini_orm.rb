@@ -24,10 +24,10 @@ class MiniORM
     order.any? ? Order.new(order.first) : (raise RecordNotFound, "No order with id #{ order_id }")
   end
 
-  def store_license_key(user, license_key)
+  def store_license_key(user, license_key_text)
     execute(
       "INSERT INTO license_keys (user_id, license_key) VALUES (?, ?);",
-      user.id, license_key
+      user.id, license_key_text
     )
   end
 
