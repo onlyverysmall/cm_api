@@ -58,15 +58,10 @@ order_pairs.each do |shop, customer|
 end
 
 # Seed license key
+rey = db.find_user(1)
 key_text = "Quigoncadeskywalkermustafardarthlarssidiousantillesk3poWedgelandowedgemonantillesnaboosolodantooinejawaCadec3poantillesfettlandoackbarDookuleiawookieehuttHuttchewbaccamustafarendorchewbaccajadecalrissianHuttdarthwookieeantillesowenGrievoushuttskywalkermoffcalamarimoff"
-db.execute(
-  "INSERT INTO license_keys (user_id, license_key) VALUES (?, ?);",
-  rey, key_text
-)
-db.execute(
-  "UPDATE users SET num_license_keys_sent = num_license_keys_sent + 1 WHERE id = ?;",
-  rey
-)
+db.store_license_key(rey, key_text)
+db.update_license_count_for(rey)
 
 # Print results
 puts "USERS"
