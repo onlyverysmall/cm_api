@@ -1,5 +1,8 @@
 require_relative 'mini_orm'
 
+require 'require_all'
+require_all 'models'
+
 # Drop existing database to seed cleanly
 File.delete(MiniORM::DB_FILENAME) if File.exist?(MiniORM::DB_FILENAME)
 
@@ -67,9 +70,9 @@ db.execute(
 
 # Print results
 puts "USERS"
-db.execute("SELECT * FROM users;").each { |user| p user }
+db.execute("SELECT * FROM users;").each { |user| p User.new(user) }
 puts "ORDERS"
-db.execute("SELECT * FROM orders;").each { |order| p order }
+db.execute("SELECT * FROM orders;").each { |order| p Order.new(order) }
 puts "LICENSE_KEYS"
-db.execute("SELECT * FROM license_keys;").each { |license| p license }
+db.execute("SELECT * FROM license_keys;").each { |license| p LicenseKey.new(license) }
 
