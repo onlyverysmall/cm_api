@@ -1,12 +1,10 @@
-require 'sqlite3'
+require_relative 'mini_orm'
 
 # Drop existing database to seed cleanly
-db_filename = "test.db"
-File.delete(db_filename) if File.exist?(db_filename)
+File.delete(MiniORM::DB_FILENAME) if File.exist?(MiniORM::DB_FILENAME)
 
-# Create database
-db = SQLite3::Database.new(db_filename)
-db.results_as_hash = true
+# Create database connection
+db = MiniORM.new
 
 # Create users table
 db.execute <<-SQL
