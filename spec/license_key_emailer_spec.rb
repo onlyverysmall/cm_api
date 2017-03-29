@@ -1,5 +1,3 @@
-require_all Dir.glob("**/**/*.rb").reject { |f| f.start_with? "spec/" }
-
 describe LicenseKeyEmailer do
   let(:env) { { "REQUEST_METHOD" => "POST" } }
   let(:request) { Rack::Request.new(env) }

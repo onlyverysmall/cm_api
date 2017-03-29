@@ -1,6 +1,3 @@
-require_all Dir.glob("**/**/*.rb").reject { |f| f.start_with? "spec/" }
-require "rack/test"
-
 describe ParamsChecker do
   include Rack::Test::Methods
 

@@ -1,6 +1,5 @@
-require_relative "mini_orm"
 require "require_all"
-require_all "models"
+require_all "app/models"
 
 # Drop existing database to seed cleanly
 File.delete(MiniORM::DB_FILENAME) if File.exist?(MiniORM::DB_FILENAME)
