@@ -25,7 +25,7 @@ class LicenseKeyEmailer
   end
 
   def body
-    error ? error : "License key for customer #{ customer. id } saved."
+    error ? error : "License key for customer #{ customer.id } saved."
   end
 
   private
