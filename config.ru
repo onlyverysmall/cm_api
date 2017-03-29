@@ -1,6 +1,6 @@
 require "rack"
-require 'require_all'
-require_all Dir.glob("**/**/*.rb").reject { |f| f == "seeds.rb" }
+require "require_all"
+require_all Dir.glob("**/**/*.rb").reject { |f| (f.start_with? "spec/")|| (f == "seeds.rb") }
 
 app = Rack::Builder.new do
   use Rack::Reloader

@@ -21,7 +21,7 @@ class LicenseKeyEmailer
   end
 
   def status
-    error ? "400" : "200"
+    error ? 400 : 200
   end
 
   def body

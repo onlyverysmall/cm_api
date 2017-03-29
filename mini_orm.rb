@@ -1,4 +1,4 @@
-require 'sqlite3'
+require "sqlite3"
 
 class MiniORM
   DB_FILENAME = "test.db"
