@@ -9,7 +9,7 @@ describe RouteResolver do
     let(:response) { get "/" }
 
     it { expect(response.status).to eq 405 }
-    it { expect(response.body).to include "invalid request method" }
+    it { expect(response.body).to include "Invalid request method (must be POST)." }
   end
 
   context "POST with weird path" do
@@ -17,6 +17,6 @@ describe RouteResolver do
     let(:response) { post "/somewhere-weird" }
 
     it { expect(response.status).to eq 404 }
-    it { expect(response.body).to include "not found" }
+    it { expect(response.body).to include "Invalid request path (must be `/license-key`)." }
   end
 end

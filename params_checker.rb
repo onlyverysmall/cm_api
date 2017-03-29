@@ -18,6 +18,6 @@ class ParamsChecker
   end
 
   def bad_request
-    [400, {}, ["bad request"]]
+    [400, {}, ["`userID`, `userID_customer`, `licenseKey`, and `orderID` are required."]]
   end
 end

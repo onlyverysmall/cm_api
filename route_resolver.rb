@@ -16,10 +16,10 @@ class RouteResolver
   private
 
   def invalid_request_method
-    [405, {}, ["invalid request method"]]
+    [405, {}, ["Invalid request method (must be POST)."]]
   end
 
   def not_found
-    [404, {}, ["not found"]]
+    [404, {}, ["Invalid request path (must be `/license-key`)."]]
   end
 end

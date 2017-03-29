@@ -9,6 +9,6 @@ describe ParamsChecker do
     let(:response) { post "/license-key" }
 
     it { expect(response.status).to eq 400 }
-    it { expect(response.body).to include "bad request" }
+    it { expect(response.body).to eq "`userID`, `userID_customer`, `licenseKey`, and `orderID` are required." }
   end
 end
