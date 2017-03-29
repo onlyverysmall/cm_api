@@ -5,7 +5,7 @@ describe RouteResolver do
   include Rack::Test::Methods
 
   context "GET to '/'" do
-    let(:app)      { RouteResolver.new({}) }
+    let(:app)      { described_class.new({}) }
     let(:response) { get "/" }
 
     it { expect(response.status).to eq 405 }
@@ -13,7 +13,7 @@ describe RouteResolver do
   end
 
   context "POST with weird path" do
-    let(:app)      { RouteResolver.new({}) }
+    let(:app)      { described_class.new({}) }
     let(:response) { post "/somewhere-weird" }
 
     it { expect(response.status).to eq 404 }
